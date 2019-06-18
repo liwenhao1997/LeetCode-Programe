@@ -14,11 +14,11 @@ class Solution {
 public int[] sortArrayByParityII(int[] A) {
     int j = 1;
     for (int i = 0; i < A.length; i = i + 2) {
-        if ((A[i] & 1) != 0) {
+        if ((A[i] & 1) != 0) {        //通过位运算判断当前项是奇数还是偶数
             while ((A[j] & 1) != 0) {
-                j = j + 2;
+                j = j + 2;           //将下标移动至不满足条件的项为止
             }
-            int tmp = A[i];
+            int tmp = A[i];         //交换，也可以使用位运算进行交换
             A[i] = A[j];
             A[j] = tmp;
         }
